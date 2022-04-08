@@ -8,7 +8,7 @@ export const useUsers = () => {
 		getUsers(setUsers);
 	}, []);
 
-	return { users, setUsers };
+	return { users };
 };
 
 const getUsers = async setUsers => {

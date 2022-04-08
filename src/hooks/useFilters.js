@@ -7,7 +7,12 @@ export const useFilters = initialUsers => {
 
 	const [sortBy, setSortBy] = useState('default');
 
-	let filteredUsers = filterActiveUsers(initialUsers, onlyActive);
+	const [resultsPerPage, setResultsPerPage] = useState(5);
+
+	const [page, setPage] = useState(1);
+
+	let filteredUsers = filterByPage(initialUsers, resultsPerPage, page);
+	filteredUsers = filterActiveUsers(filteredUsers, onlyActive);
 	filteredUsers = filterUsersByName(filteredUsers, search);
 	filteredUsers = sortByUsers(filteredUsers, sortBy);
 
@@ -18,7 +23,11 @@ export const useFilters = initialUsers => {
 		onlyActive,
 		setOnlyActive,
 		sortBy,
-		setSortBy
+		setSortBy,
+		page,
+		setPage,
+		resultsPerPage,
+		setResultsPerPage
 	};
 };
 
@@ -46,4 +55,12 @@ const sortByUsers = (users, sortBy) => {
 		if (a.name < b.name) return -1;
 		return 0;
 	});
+};
+
+const filterByPage = (users, resultsPerPage, page) => {
+	const sliceUsers = users.slice(
+		page * resultsPerPage - resultsPerPage,
+		resultsPerPage * page
+	);
+	return sliceUsers;
 };
