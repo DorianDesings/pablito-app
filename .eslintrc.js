@@ -11,6 +11,7 @@ module.exports = {
 	extends: [
 		'plugin:react/recommended',
 		'plugin:react/jsx-runtime',
+		'plugin:react-hooks/recommended',
 		'standard',
 		'eslint-config-prettier'
 	],
@@ -22,5 +23,8 @@ module.exports = {
 		sourceType: 'module'
 	},
 	plugins: ['react'],
-	rules: {}
+	rules: {
+		'react/prop-types': 'off',
+		camelcase: 'off'
+	}
 };
