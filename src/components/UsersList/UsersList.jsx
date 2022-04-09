@@ -36,6 +36,7 @@ const UsersList = () => {
 			<ResultsPerPage
 				resultsPerPage={resultsPerPage}
 				setResultsPerPage={setResultsPerPage}
+				setPage={setPage}
 			/>
 
 			<Pagination page={page} setPage={setPage} totalPages={totalPages} />

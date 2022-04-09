@@ -1,7 +1,10 @@
-const ResultsPerPage = ({ resultsPerPage, setResultsPerPage }) => (
+const ResultsPerPage = ({ resultsPerPage, setResultsPerPage, setPage }) => (
 	<select
 		value={resultsPerPage}
-		onChange={e => setResultsPerPage(Number(e.target.value))}
+		onChange={e => {
+			setResultsPerPage(Number(e.target.value));
+			setPage(1);
+		}}
 	>
 		<option value='5'>5</option>
 		<option value='10'>10</option>
