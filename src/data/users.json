@@ -5,18 +5,18 @@
       "name": "Caroline Lane",
       "username": "@carolinelane",
       "role": "profesor",
-      "active": false,
+      "active": true,
       "image": "/assets/users/1.jpg",
       "id": 1
     },
     {
-      "id": 2,
+      "userId": 2,
       "name": "Dana Lawrence",
-      "email": "dana.lawrence@example.com",
       "username": "@danalawrence",
-      "image": "/assets/users/2.jpg",
       "role": "otro",
-      "active": false
+      "active": true,
+      "image": "/assets/users/2.jpg",
+      "id": 2
     },
     {
       "id": 3,
@@ -352,13 +352,13 @@
       "active": false
     },
     {
-      "id": 40,
+      "userId": 40,
       "name": "Juan Palmer",
-      "email": "juan.palmer@example.com",
       "username": "@juanpalmer",
-      "image": "/assets/users/40.jpg",
       "role": "otro",
-      "active": true
+      "active": true,
+      "image": "/assets/users/40.jpg",
+      "id": 40
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useFilters } from '../../hooks/useFilters';
 import { useUsers } from '../../hooks/useUsers';
 import UserFormModal from '../Modal/UserFormModal';
@@ -23,10 +23,6 @@ const UsersList = () => {
 		resultsPerPage,
 		setResultsPerPage
 	} = useFilters(users);
-
-	useEffect(() => {
-		console.log('USER CHANGE');
-	}, [users]);
 
 	const totalPages = Math.ceil(users.length / resultsPerPage);
 

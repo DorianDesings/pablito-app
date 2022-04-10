@@ -4,20 +4,18 @@ import { StyledButton, StyledModal } from './modal.styles';
 
 const updateUser = async userData => {
 	userData.image = `/assets/users/${userData.userId}.jpg`;
-	const request = fetch(`http://localhost:3001/users/${userData.userId}`, {
+	fetch(`http://localhost:3001/users/${userData.userId}`, {
 		method: 'PUT',
 		body: JSON.stringify(userData),
 		headers: {
 			'Content-Type': 'application/json'
 		}
 	});
-
-	console.log('REQUEST', request);
 };
 
 const addUser = async userData => {
 	userData.userId = Date.now();
-	const request = await fetch('http://localhost:3001/users', {
+	await fetch('http://localhost:3001/users', {
 		method: 'POST',
 		body: JSON.stringify(userData),
 		headers: {
